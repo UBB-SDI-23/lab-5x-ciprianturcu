@@ -108,8 +108,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'lawfirmdb',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
+        'USER': 'cipri',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': '5432',
     }
