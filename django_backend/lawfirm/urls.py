@@ -17,22 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from drf_spectacular.views import SpectacularSwaggerView, SpectacularAPIView
 
-from drf_yasg import openapi
-from drf_yasg.views import get_schema_view as swagger_get_schema_view
-
-# schema_view = swagger_get_schema_view(
-#     openapi.Info(
-#         title='Lawfirm Api',
-#         default_version='1.0.0',
-#         description="API documentation of App",
-#     ),
-#     public=True,
-# )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    #path('api/swagger/schema/', schema_view.with_ui('swagger', cache_timeout=0), name="swagger-schema"),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
 ]
