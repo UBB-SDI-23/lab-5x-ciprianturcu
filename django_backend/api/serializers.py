@@ -9,6 +9,7 @@ class AttorneySerializer(serializers.ModelSerializer):
         pattern = r'^[a-zA-Z\s]+$'
         if not bool(re.match(pattern, data['name'])):
             raise serializers.ValidationError('Name must contain only letters and spaces')
+        return data
 
     class Meta:
         model = Attorney
