@@ -25,8 +25,8 @@ export const AppMenu = () => {
 						Client management
 					</Typography>
 					<Button
-						variant={path.startsWith("/courses") ? "outlined" : "text"}
-						to="/courses"
+						variant={path.startsWith("/client") ? "outlined" : "text"}
+						to="/client"
 						component={Link}
 						color="inherit"
 						sx={{ mr: 5 }}
