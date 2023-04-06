@@ -8,10 +8,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AppHome } from "./components/AppHome";
 import { AppMenu } from "./components/AppMenu";
-import { AllCourses } from "./components/courses/AllCourses";
-import { CourseDetails } from "./components/courses/CourseDetails";
-import { CourseDelete } from "./components/courses/CourseDelete";
-import { CourseAdd } from "./components/courses/CourseAdd";
+import { AllClients } from "./components/client/AllClients";
+import { ClientDetails } from "./components/client/ClientDetail";
+import { ClientDelete } from "./components/client/ClientDelete";
+import { ClientAdd } from "./components/client/ClientAdd";
+import { ClientUpdate } from "./components/client/ClientUpdate";
 
 function App() {
 	return (
@@ -21,11 +22,12 @@ function App() {
 
 				<Routes>
 					<Route path="/" element={<AppHome />} />
-					<Route path="/courses" element={<AllCourses />} />
-					<Route path="/courses/:courseId/details" element={<CourseDetails />} />
-					<Route path="/courses/:courseId/edit" element={<CourseDetails />} />
-					<Route path="/courses/:courseId/delete" element={<CourseDelete />} />
-					<Route path="/courses/add" element={<CourseAdd />} />
+					<Route path="/client" element={<AllClients />} />
+					<Route path="/client/:clientId/details" element={<ClientDetails />} />
+					<Route path="/client/:clientId/edit" element={<ClientUpdate />} />
+					<Route path="/client/:clientId/delete" element={<ClientDelete />} />
+					<Route path="/client/add" element={<ClientAdd />} />
+					
 				</Routes>
 			</Router>
 		</React.Fragment>
