@@ -1,14 +1,14 @@
 export enum LawsuitType{
-    Civil,
-    Commercial,
-    Criminal,
-    Family,
-    Juvenile,
-    Tax,
+    CIVIL = "Civil",
+    COMMERCIAL = "Commercial",
+    CRIMINAL = "Criminal",
+    FAMILY = "Family",
+    JUVENILE = "Juvenile",
+    TAX = "Tax",
 }
 
 export interface Lawsuit{
-    id: number
+    id?: number
     description:string
     type: LawsuitType
     state: string

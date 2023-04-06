@@ -1,34 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import React from 'react'
-import { ClientShowAll } from './components/ClientShowAll'
+import { useState } from "react";
+import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import * as React from "react";
+import { AppBar, Toolbar, IconButton, Typography, Button } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AppHome } from "./components/AppHome";
+import { AppMenu } from "./components/AppMenu";
+import { AllCourses } from "./components/courses/AllCourses";
+import { CourseDetails } from "./components/courses/CourseDetails";
+import { CourseDelete } from "./components/courses/CourseDelete";
+import { CourseAdd } from "./components/courses/CourseAdd";
 
 function App() {
-  const [count, setCount] = useState(0)
+	return (
+		<React.Fragment>
+			<Router>
+				<AppMenu />
 
-  return (
-    <React.Fragment>
-
-      <ClientShowAll/>
-
-      {/* <div className="App">
-        <h1>Vite + React</h1>
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test HMR
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
-      </div> */}
-    </React.Fragment>
-  )
+				<Routes>
+					<Route path="/" element={<AppHome />} />
+					<Route path="/courses" element={<AllCourses />} />
+					<Route path="/courses/:courseId/details" element={<CourseDetails />} />
+					<Route path="/courses/:courseId/edit" element={<CourseDetails />} />
+					<Route path="/courses/:courseId/delete" element={<CourseDelete />} />
+					<Route path="/courses/add" element={<CourseAdd />} />
+				</Routes>
+			</Router>
+		</React.Fragment>
+	);
 }
 
-export default App
+export default App;
