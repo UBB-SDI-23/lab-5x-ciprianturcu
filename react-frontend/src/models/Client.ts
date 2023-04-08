@@ -1,8 +1,8 @@
 import { Lawsuit } from "./Lawsuit"
 
 export enum ClientType{
-    PHISICAL = "Physical person",
-    JURIDICAL = "Juridical person"
+    PHISICAL = "Physical Person",
+    JURIDICAL = "Juridical Person"
 }
 
 export interface Client{
