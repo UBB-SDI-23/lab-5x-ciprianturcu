@@ -12,7 +12,7 @@ export const ClientDetails = () => {
 
     useEffect(() => {
         const fetchClient =async () => {
-            const response = await fetch(`../api/client/${clientId}/`);
+            const response = await fetch(`../../api/client/${clientId}/`);
             const client = await response.json();
             setClient(client);
             console.log(client);
