@@ -33,7 +33,7 @@ export const ClientAdd = () => {
 		<Container>
 			<Card>
 				<CardContent>
-					<IconButton component={Link} sx={{ mr: 3 }} to={`/courses`}>
+					<IconButton component={Link} sx={{ mr: 3 }} to={`/client`}>
 						<ArrowBackIcon />
 					</IconButton>{" "}
 					<form onSubmit={addClient}>
@@ -69,14 +69,6 @@ export const ClientAdd = () => {
 							sx={{ mb: 2 }}
 							onChange={(event) => setClient({ ...client, date_of_birth: event.target.value })}
 						/>
-						{/* <TextField
-							id="type"
-							label="Type"
-							variant="outlined"
-							fullWidth
-							sx={{ mb: 2 }}
-							onChange={(event) => setClient({ ...client, type: event.target.value })}
-						/> */}
 						<InputLabel id="client-type-label">Client Type</InputLabel>
 						<Select
 							labelId="client-type-label"
