@@ -41,11 +41,11 @@ export const ClientDetails = () => {
                 </ul>
             </CardContent>
             <CardActions>
-                <IconButton component={Link} sx={{ mr: 3 }} to={`/client/${client}/edit`}>
+                <IconButton component={Link} sx={{ mr: 3 }} to={`/client/${client?.id}/edit`}>
                     <EditIcon />
                 </IconButton>
 
-                <IconButton component={Link} sx={{ mr: 3 }} to={`/client/${client}/delete`}>
+                <IconButton component={Link} sx={{ mr: 3 }} to={`/client/${client?.id}/delete`}>
                     <DeleteForeverIcon sx={{ color: "red" }} />
                 </IconButton>
             </CardActions>
