@@ -22,7 +22,7 @@ export const ClientAdd = () => {
 	const addClient = async (event: { preventDefault: () => void }) => {
 		event.preventDefault();
 		try {
-			await axios.post(`${BACKEND_API_URL}/client/`, client);
+			await axios.post(`../api/client/`, client);
 			navigate("/client");
 		} catch (error) {
 			console.log(error);
