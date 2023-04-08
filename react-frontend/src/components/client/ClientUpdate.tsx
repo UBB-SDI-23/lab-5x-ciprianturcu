@@ -101,13 +101,6 @@ export const ClientUpdate = () => {
 					</form>
 				</CardContent>
 				<CardActions>
-					{/* <IconButton component={Link} sx={{ mr: 3 }} to={`/courses/${courseId}/edit`}>
-						<EditIcon />
-					</IconButton>
-
-					<IconButton component={Link} sx={{ mr: 3 }} to={`/courses/${courseId}/delete`}>
-						<DeleteForeverIcon sx={{ color: "red" }} />
-					</IconButton> */}
 				</CardActions>
 			</Card>
 		</Container>
