@@ -26,7 +26,13 @@ export const ClientUpdate = () => {
 		const fetchClient = async () => {
 			const response = await fetch(`../../api/client/${clientId}/`);
 			const client = await response.json();
-			setClient(client);
+			setClient({
+				name: client.name,
+				phoneNumber: client.phoneNumber,
+				city: client.city,
+				date_of_birth: client.date_of_birth,
+				type: client.type
+			});
 			setLoading(false);
 			console.log(client);
 		};
