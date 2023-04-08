@@ -67,7 +67,7 @@ export const AllClients = () => {
 										{index + 1}
 									</TableCell>
 									<TableCell component="th" scope="row">
-										<Link to={`/client/${client.id}/`} title="View client details">
+										<Link to={`/client/${client.id}/details`} title="View client details">
 											{client.name}
 										</Link>
 									</TableCell>
@@ -79,7 +79,7 @@ export const AllClients = () => {
 										<IconButton
 											component={Link}
 											sx={{ mr: 3 }}
-											to={`/client/${client.id}/`}>
+											to={`/client/${client.id}/details`}>
 											<Tooltip title="View client details" arrow>
 												<ReadMoreIcon color="primary" />
 											</Tooltip>
