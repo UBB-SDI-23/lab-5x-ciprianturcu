@@ -64,7 +64,7 @@ export const AllClients = () => {
 							{clients.map((client, index) => (
 								<TableRow key={client.id}>
 									<TableCell component="th" scope="row">
-										{client.id}
+										{index + 1}
 									</TableCell>
 									<TableCell component="th" scope="row">
 										<Link to={`/client/${client.id}/`} title="View client details">
