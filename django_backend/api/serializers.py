@@ -47,7 +47,7 @@ class ClientSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Client
-        fields = ('name', 'phoneNumber', 'city', 'date_of_birth', 'type', 'lawsuits')
+        fields = ('id','name', 'phoneNumber', 'city', 'date_of_birth', 'type', 'lawsuits')
 
 
 class AttorneyOnLawsuitSerializer(serializers.ModelSerializer):
