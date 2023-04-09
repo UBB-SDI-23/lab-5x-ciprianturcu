@@ -16,7 +16,7 @@ export const ClientAdd = () => {
 		phoneNumber: "",
 		city:"",
 		date_of_birth: "",
-		type: ClientType.PHISICAL,
+		type: ClientType["Physical Person"],
 	});
 
 	const addClient = async (event: { preventDefault: () => void }) => {
