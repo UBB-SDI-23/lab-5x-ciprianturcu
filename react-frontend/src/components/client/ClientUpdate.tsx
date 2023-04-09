@@ -100,11 +100,6 @@ export const ClientUpdate = () => {
 						>
 							<MenuItem value="Juridical Person">Juridical Person</MenuItem>
 							<MenuItem value="Physical Person">Physical Person</MenuItem>
-							{/* {Object.keys(ClientType).map((key) => (
-								<option key={key} value={key}>
-									{getClientTypeByTypeKey(key as ClientTypeKey)}
-								</option>
-							))} */}
 						</Select>
 						<Button type="submit">Update Client</Button>
 					</form>
