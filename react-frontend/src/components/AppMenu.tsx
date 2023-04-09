@@ -33,6 +33,16 @@ export const AppMenu = () => {
 						startIcon={<LocalLibraryIcon />}>
 						Client
 					</Button>
+
+					<Button
+						variant={path.startsWith("/top-profits") ? "outlined" : "text"}
+						to="/top-profits"
+						component={Link}
+						color="inherit"
+						sx={{ mr: 5 }}
+						startIcon={<LocalLibraryIcon />}>
+						Profit Statistic
+					</Button>
 				</Toolbar>
 			</AppBar>
 		</Box>
