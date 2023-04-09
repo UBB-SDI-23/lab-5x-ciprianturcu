@@ -98,11 +98,13 @@ export const ClientUpdate = () => {
 							value={client.type}
 							onChange={(event) => setClient({...client, type: event.target.value as ClientType})}
 						>
-							{Object.keys(ClientType).map((key) => (
+							<option value="JURIDICAL"> Juridical Person</option>
+							<option value="PHYSICAL"> Physical Person</option>
+							{/* {Object.keys(ClientType).map((key) => (
 								<option key={key} value={key}>
 									{getClientTypeByTypeKey(key as ClientTypeKey)}
 								</option>
-							))}
+							))} */}
 						</Select>
 						<Button type="submit">Update Client</Button>
 					</form>
