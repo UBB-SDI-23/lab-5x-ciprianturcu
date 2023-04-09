@@ -11,13 +11,15 @@ interface ClientTypeMap{
     [key:string]: ClientType;
 }
 
-const ClientTypeMap : ClientTypeMap = {
+const clientTypeMap : ClientTypeMap = {
     [ClientType.PHISICAL]: ClientType.PHISICAL,
     [ClientType.JURIDICAL]: ClientType.JURIDICAL
 };
 
 export function getClientTypeByTypeKey(key : ClientTypeKey) : ClientType{
-    return ClientTypeMap[key]
+    const clientType = clientTypeMap[key];
+  console.log(`getClientTypeByKey("${key}") returned:`, clientType);
+  return clientType;
 }
 
 export interface Client{
