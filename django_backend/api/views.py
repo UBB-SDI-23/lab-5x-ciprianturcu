@@ -100,8 +100,7 @@ class ProfitStatisticView(generics.ListAPIView):
     serializer_class = LawsuitProfitReportDTO
 
     def get_queryset(self):
-        #queryset = Lawsuit.objects.annotate(profit=Sum('attorneyonlawsuit__attorney__fee')).order_by('-profit')[:3]
-        queryset = Lawsuit.objects.annotate(profit=Sum('attorneyonlawsuit__attorney__fee')).order_by(F('profit').desc(nulls_last=True))
+        queryset = Lawsuit.objects.annotate(profit=Sum('attorneyonlawsuit__attorney__fee')).order_by(F('profit').desc(nulls_last=True))[:3]
         return queryset
 
 
