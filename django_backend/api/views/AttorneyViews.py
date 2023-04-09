@@ -1,7 +1,7 @@
 from rest_framework import generics
 
 from api.models import Attorney
-from api.serializers.AttorneySerializers import AttorneySerializer
+from api.serializers import AttorneySerializer
 
 
 class AttorneyList(generics.ListCreateAPIView):

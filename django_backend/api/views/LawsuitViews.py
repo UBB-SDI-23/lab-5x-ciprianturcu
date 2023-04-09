@@ -1,9 +1,8 @@
 from django.db.models import Sum, F
 from rest_framework import generics
 
-from api.DTOs.LawsuitProfitDTO import LawsuitProfitReportDTO
 from api.models import Lawsuit
-from api.serializers.LawsuitSerializers import LawsuitSerializer
+from api.serializers import LawsuitSerializer, LawsuitProfitReportDTO
 
 
 class LawsuitList(generics.ListCreateAPIView):
@@ -26,9 +25,11 @@ class LawsuitDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = LawsuitSerializer
     queryset = Lawsuit.objects.all()
 
+
 class ProfitStatisticView(generics.ListAPIView):
     serializer_class = LawsuitProfitReportDTO
 
     def get_queryset(self):
-        queryset = Lawsuit.objects.annotate(profit=Sum('attorneyonlawsuit__attorney__fee')).order_by(F('profit').desc(nulls_last=True))[:3]
+        queryset = Lawsuit.objects.annotate(profit=Sum('attorneyonlawsuit__attorney__fee')).order_by(
+            F('profit').desc(nulls_last=True))[:3]
         return queryset
