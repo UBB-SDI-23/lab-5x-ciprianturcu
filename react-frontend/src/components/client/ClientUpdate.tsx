@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, IconButton, InputLabel, Select, TextField } from "@mui/material";
+import { Button, Card, CardActions, CardContent, IconButton, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { Container } from "@mui/system";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -98,8 +98,8 @@ export const ClientUpdate = () => {
 							value={client.type}
 							onChange={(event) => setClient({...client, type: event.target.value as ClientType})}
 						>
-							<option value="JURIDICAL"> Juridical Person</option>
-							<option value="PHYSICAL"> Physical Person</option>
+							<MenuItem value="JURIDICAL">Juridical Person</MenuItem>
+							<MenuItem value="PHYSICAL">Physical Person</MenuItem>
 							{/* {Object.keys(ClientType).map((key) => (
 								<option key={key} value={key}>
 									{getClientTypeByTypeKey(key as ClientTypeKey)}
