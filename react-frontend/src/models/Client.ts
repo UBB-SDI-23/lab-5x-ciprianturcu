@@ -12,8 +12,8 @@ interface ClientTypeMap{
 }
 
 const clientTypeMap : ClientTypeMap = {
-    [ClientType.PHISICAL]: ClientType.PHISICAL,
-    [ClientType.JURIDICAL]: ClientType.JURIDICAL
+    PHISICAL: ClientType.PHISICAL,
+    JURIDICAL: ClientType.JURIDICAL,
 };
 
 export function getClientTypeByTypeKey(key : ClientTypeKey) : ClientType{
