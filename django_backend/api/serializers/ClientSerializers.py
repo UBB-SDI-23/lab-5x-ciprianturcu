@@ -3,6 +3,7 @@ import re
 from rest_framework import serializers
 
 from api.models import Client
+from api.serializers.LawsuitSerializers import LawsuitSerializer
 
 
 class ClientSerializer(serializers.ModelSerializer):

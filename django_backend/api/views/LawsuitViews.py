@@ -1,8 +1,9 @@
 from django.db.models import Sum, F
 from rest_framework import generics
 
+from api.DTOs.LawsuitProfitDTO import LawsuitProfitReportDTO
 from api.models import Lawsuit
-from api.serializers import LawsuitSerializer, LawsuitProfitReportDTO
+from api.serializers.LawsuitSerializers import LawsuitSerializer
 
 
 class LawsuitList(generics.ListCreateAPIView):

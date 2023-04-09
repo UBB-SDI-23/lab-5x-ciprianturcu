@@ -1,5 +1,8 @@
 from django.db import models
 
+from api.models import Client
+
+
 class Lawsuit(models.Model):
     types = ['Criminal', 'Civil', 'Family', 'Commercial', 'Juvenile', 'Tax']
     Choice = sorted([(item, item) for item in types])

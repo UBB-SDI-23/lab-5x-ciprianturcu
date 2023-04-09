@@ -1,4 +1,9 @@
 from django.db import models
+
+from api.models.Attorney import Attorney
+from api.models.Lawsuit import Lawsuit
+
+
 class AttorneyOnLawsuit(models.Model):
     attorney = models.ForeignKey(Attorney, on_delete=models.CASCADE)
     lawsuit = models.ForeignKey(Lawsuit, on_delete=models.CASCADE)
