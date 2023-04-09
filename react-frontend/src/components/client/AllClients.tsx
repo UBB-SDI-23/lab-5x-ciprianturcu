@@ -10,6 +10,7 @@ import {
 	Container,
 	IconButton,
 	Tooltip,
+	Button,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -34,6 +35,28 @@ export const AllClients = () => {
 			});
 	}, []);
 
+	console.log(clients)
+
+	const sortClient = () => {
+        const sortedClients = [... clients].sort((a:Client, b:Client)=>{
+			const [year1, month1, day1] = a.date_of_birth.split('-').map(Number);
+  			const [year2, month2, day2] = b.date_of_birth.split('-').map(Number);
+			
+			  const dateObj1 = new Date(year1, month1 - 1, day1);
+			  const dateObj2 = new Date(year2, month2 - 1, day2);
+
+			  if (dateObj1.getTime() < dateObj2.getTime()) {
+				return -1;
+			  } else if (dateObj1.getTime() > dateObj2.getTime()) {
+				return 1;
+			  } else {
+				return 0;
+			  }
+		})
+		console.log(sortedClients);
+		setClients(sortedClients);
+    }
+
 	return (
 		<Container>
 			<h1>All Clients</h1>
@@ -47,6 +70,13 @@ export const AllClients = () => {
 					</Tooltip>
 				</IconButton>
 			)}
+
+			{!loading && (
+            	<Button sx={{color:"red"}} onClick={sortClient}>
+                	Sort Clients By Age
+            	</Button>
+        	)}
+
 			{!loading && clients.length > 0 && (
 				<TableContainer component={Paper}>
 					<Table sx={{ minWidth: 650 }} aria-label="simple table">
