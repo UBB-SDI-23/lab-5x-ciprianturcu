@@ -43,7 +43,7 @@ export const ClientUpdate = () => {
 		event.preventDefault();
 		try{
 			await axios.put(`../../api/client/${clientId}/`, client);
-			navigate(`/client/${clientId}`)
+			navigate(`/client/${clientId}/details`)
 		}catch(error)
 		{
 			console.log(error);
