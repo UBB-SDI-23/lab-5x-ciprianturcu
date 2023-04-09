@@ -3,7 +3,7 @@ import { Container } from "@mui/system";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { BACKEND_API_URL } from "../../constants";
-import { Client, ClientType } from "../../models/Client";
+import { Client, ClientType, ClientTypeKey, getClientTypeByTypeKey } from "../../models/Client";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -100,11 +100,11 @@ export const ClientUpdate = () => {
 						>
 							{Object.keys(ClientType).map((key) => (
 								<option key={key} value={key}>
-									{key}
+									{getClientTypeByTypeKey(key as ClientTypeKey)}
 								</option>
 							))}
 						</Select>
-						<Button type="submit">Update Tennis Player</Button>
+						<Button type="submit">Update Client</Button>
 					</form>
 				</CardContent>
 				<CardActions>
