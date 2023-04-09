@@ -80,7 +80,7 @@ export const ClientAdd = () => {
 							<MenuItem value="Physical Person">Physical Person</MenuItem>
 						</Select>
 
-						<Button type="submit">Add Course</Button>
+						<Button type="submit">Add Client</Button>
 					</form>
 				</CardContent>
 				<CardActions></CardActions>
