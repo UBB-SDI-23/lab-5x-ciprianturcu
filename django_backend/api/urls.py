@@ -1,6 +1,9 @@
 from django.urls import path
-from .views import AttorneyList, LawsuitList, ClientList, AttorneyDetail, ClientDetail, LawsuitDetail, \
-    AttorneyOnLawsuitList, AttorneyOnLawsuitDetail, ProfitStatisticView, AttorneyTravelView, LawsuitsOfClientList
+
+from api.views.AttorneyOnLawsuitViews import AttorneyOnLawsuitList, AttorneyOnLawsuitDetail, AttorneyTravelView
+from api.views.AttorneyViews import AttorneyList, AttorneyDetail
+from api.views.ClientViews import ClientList, ClientDetail, LawsuitsOfClientList
+from api.views.LawsuitViews import LawsuitList, LawsuitDetail, ProfitStatisticView
 
 urlpatterns = [
     path('attorney/', AttorneyList.as_view()),
