@@ -26,7 +26,7 @@ class LawsuitSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lawsuit
-        fields = ('description', 'type', 'state', 'courtDate','client')
+        fields = ('id','description', 'type', 'state', 'courtDate','client')
 
 
 class ClientSerializer(serializers.ModelSerializer):
