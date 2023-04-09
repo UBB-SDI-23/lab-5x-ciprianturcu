@@ -112,6 +112,9 @@ DATABASES = {
         'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': '5432',
+        'TEST':{
+            'NAME': 'lawfirmdb_test'
+        }
     }
 }
 
