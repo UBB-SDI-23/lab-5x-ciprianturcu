@@ -4,7 +4,8 @@ from rest_framework.views import APIView
 from api.models import Client
 from rest_framework.response import Response
 
-from api.serializers import LawsuitSerializer, ClientSerializer
+from api.serializers.ClientSerializers import ClientSerializer
+from api.serializers.LawsuitSerializers import LawsuitSerializer
 
 
 class LawsuitsOfClientList(APIView):

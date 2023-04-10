@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import Attorney, Lawsuit, Client, AttorneyOnLawsuit
+
+from api.models.Attorney import Attorney
+from api.models.AttorneyOnLawsuit import AttorneyOnLawsuit
+from api.models.Client import Client
+from api.models.Lawsuit import Lawsuit
 
 admin.site.register(Attorney)
 admin.site.register(Lawsuit)
