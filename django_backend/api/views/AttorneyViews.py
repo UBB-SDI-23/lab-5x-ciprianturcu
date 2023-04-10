@@ -1,6 +1,6 @@
 from rest_framework import generics
 
-from api.models import Attorney
+from api.models.Attorney import Attorney
 from api.serializers.AttorneySerializers import AttorneySerializer
 
 

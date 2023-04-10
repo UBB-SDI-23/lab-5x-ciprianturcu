@@ -1,9 +1,10 @@
 from rest_framework import status, generics
 from rest_framework.views import APIView
 
-from api.models import Client
+
 from rest_framework.response import Response
 
+from api.models.Client import Client
 from api.serializers.ClientSerializers import ClientSerializer
 from api.serializers.LawsuitSerializers import LawsuitSerializer
 

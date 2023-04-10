@@ -1,7 +1,7 @@
 from django.db.models import Sum, F
 from rest_framework import generics
 
-from api.models import Lawsuit
+from api.models.Lawsuit import Lawsuit
 from api.serializers.LawsuitSerializers import LawsuitSerializer, LawsuitProfitReportDTO
 
 

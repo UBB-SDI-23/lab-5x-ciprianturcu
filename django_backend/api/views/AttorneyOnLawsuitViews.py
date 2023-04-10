@@ -1,7 +1,7 @@
 from django.db.models import F
 from rest_framework import generics
 
-from api.models import AttorneyOnLawsuit
+from api.models.AttorneyOnLawsuit import AttorneyOnLawsuit
 from api.serializers.AttorneyOnLawsuitSerializers import AttorneyOnLawsuitSerializer, AttorneyTravelDTO
 
 
