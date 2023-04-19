@@ -14,9 +14,9 @@ class ClientSerializer(serializers.ModelSerializer):
         pattern_name = r'^[a-zA-Z\s]+$'
         if not bool(re.match(pattern_name, data['name'])):
             raise serializers.ValidationError('Name must contain only letters and spaces')
-        if not data['phoneNumber'].isdigit():
+        if not data['phone_number'].isdigit():
             raise serializers.ValidationError('Phone number must contain only digits!')
-        if len(data['phoneNumber']) != 10:
+        if len(data['phone_number']) != 10:
             raise serializers.ValidationError('Phone number must be 10 digits long!')
         if not bool(re.match(pattern_city, data['city'])):
             raise serializers.ValidationError('City must contain only letters and  spaces')
@@ -24,4 +24,4 @@ class ClientSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Client
-        fields = ('id','name', 'phoneNumber', 'city', 'date_of_birth', 'type', 'lawsuits')
+        fields = ('id','name', 'phone_number', 'city', 'date_of_birth', 'type', 'lawsuits')

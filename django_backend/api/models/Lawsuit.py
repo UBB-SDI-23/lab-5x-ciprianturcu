@@ -11,7 +11,7 @@ class Lawsuit(models.Model):
     type = models.CharField(max_length=50,
                             choices=Choice)
     state = models.CharField(max_length=50)
-    courtDate = models.DateField()
+    court_date = models.DateField()
     client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='lawsuits')
 
     def __str__(self):

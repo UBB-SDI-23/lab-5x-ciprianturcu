@@ -15,7 +15,7 @@ class LawsuitSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lawsuit
-        fields = ('id', 'description', 'type', 'state', 'courtDate', 'client')
+        fields = ('id', 'description', 'type', 'state', 'court_date', 'client')
 
 
 class LawsuitProfitReportDTO(serializers.Serializer):
