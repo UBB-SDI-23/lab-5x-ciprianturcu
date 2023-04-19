@@ -106,17 +106,28 @@ WSGI_APPLICATION = 'lawfirm.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'lawfirmdb',
+#         'USER': 'cipri',
+#         'PASSWORD': '1234',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#         'TEST':{
+#             'NAME': 'lawfirmdb_test'
+#         }
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lawfirmdb',
-        'USER': 'cipri',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        'TEST':{
-            'NAME': 'lawfirmdb_test'
-        }
+        'ENGINE': os.environ.get('DB_ENGINE'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
 
