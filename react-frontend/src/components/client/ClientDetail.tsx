@@ -29,7 +29,7 @@ export const ClientDetails = () => {
                 </IconButton>{" "}
                 <h1 style={{textAlign:"center"}}>Client Details</h1>
                 <p style={{textAlign:"left"}}>Name: {client?.name}</p>
-                <p style={{textAlign:"left"}}>Phone Number: {client?.phoneNumber}</p>
+                <p style={{textAlign:"left"}}>Phone Number: {client?.phone_number}</p>
                 <p style={{textAlign:"left"}}>City: {client?.city}</p>
                 <p style={{textAlign:"left"}}>Date of birth: {client?.date_of_birth}</p>
                 <p style={{textAlign:"left"}}>Type: {client?.type}</p>
