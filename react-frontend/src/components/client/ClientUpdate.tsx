@@ -16,10 +16,10 @@ export const ClientUpdate = () => {
 	
 	const [client, setClient] = useState<Client>({
 		name: "",
-		phoneNumber: "",
+		phone_number: "",
 		city: "",
 		date_of_birth: "",
-		type: ClientType["Physical Person"],
+		type: ClientType['PHYSICAL'],
 	});
 
 	useEffect(() => {
@@ -28,7 +28,7 @@ export const ClientUpdate = () => {
 			const client = await response.json();
 			setClient({
 				name: client.name,
-				phoneNumber: client.phoneNumber,
+				phone_number: client.phone_number,
 				city: client.city,
 				date_of_birth: client.date_of_birth,
 				type: client.type
@@ -73,7 +73,7 @@ export const ClientUpdate = () => {
 							variant="outlined"
 							fullWidth
 							sx={{mb : 2}}
-							onChange={(event) => setClient({ ...client, phoneNumber: event.target.value})}	
+							onChange={(event) => setClient({ ...client, phone_number: event.target.value})}	
 						/>
 						<TextField
 							id="city"

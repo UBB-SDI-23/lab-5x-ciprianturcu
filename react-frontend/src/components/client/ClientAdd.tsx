@@ -13,10 +13,10 @@ export const ClientAdd = () => {
 	const navigate = useNavigate();
 	const [client, setClient] = useState<Client>({
 		name: "",
-		phoneNumber: "",
+		phone_number: "",
 		city:"",
 		date_of_birth: "",
-		type: ClientType["Physical Person"],
+		type: ClientType['PHYSICAL'],
 	});
 
 	const addClient = async (event: { preventDefault: () => void }) => {
@@ -51,7 +51,7 @@ export const ClientAdd = () => {
 							variant="outlined"
 							fullWidth
 							sx={{ mb: 2 }}
-							onChange={(event) => setClient({ ...client, phoneNumber: event.target.value })}
+							onChange={(event) => setClient({ ...client, phone_number: event.target.value })}
 						/>
 						<TextField
 							id="city"

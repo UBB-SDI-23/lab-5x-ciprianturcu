@@ -101,7 +101,7 @@ export const AllClients = () => {
 											{client.name}
 										</Link>
 									</TableCell>
-									<TableCell align="right">{client.phoneNumber}</TableCell>
+									<TableCell align="right">{client.phone_number}</TableCell>
 									<TableCell align="right">{client.city}</TableCell>
 									<TableCell align="right">{client.date_of_birth}</TableCell>
 									<TableCell align="right">{client.type}</TableCell>

@@ -14,6 +14,11 @@ import { ClientDelete } from "./components/client/ClientDelete";
 import { ClientAdd } from "./components/client/ClientAdd";
 import { ClientUpdate } from "./components/client/ClientUpdate";
 import { ProfitStatistic } from "./components/statistics/ProfitStatistic";
+import { AllAttorneys } from "./components/attorney/AllAttorneys";
+import { AttorneyDetails } from "./components/attorney/AttorneyDetail";
+import { AttorneyUpdate } from "./components/attorney/AttorneyUpdate";
+import { AttorneyDelete } from "./components/attorney/AttorneyDelete";
+import { AttorneyAdd } from "./components/attorney/AttorneyAdd";
 
 function App() {
 	return (
@@ -27,6 +32,11 @@ function App() {
 					<Route path="/client/:clientId/edit" element={<ClientUpdate />} />
 					<Route path="/client/:clientId/delete" element={<ClientDelete />} />
 					<Route path="/client/add" element={<ClientAdd />} />
+					<Route path="/attorney" element={<AllAttorneys />} />
+					<Route path="/attorney/:attorneyId/details" element={<AttorneyDetails />} />
+					<Route path="/attorney/:attorneyId/edit" element={<AttorneyUpdate />} />
+					<Route path="/attorney/:attorneyId/delete" element={<AttorneyDelete />} />
+					<Route path="/attorney/add" element={<AttorneyAdd />} />
 					<Route path="/top-profits" element={<ProfitStatistic/>} />
 				</Routes>
 			</Router>

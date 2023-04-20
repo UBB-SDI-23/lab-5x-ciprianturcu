@@ -1,14 +1,14 @@
 import { Lawsuit } from "./Lawsuit"
 
 export enum ClientType{
-    "Physical Person",
-    "Juridical Person"
+    PHYSICAL = "Physical Person",
+    JURIDICAL = "Juridical Person"
 }
 
 export interface Client{
     id?: number
     name : string
-    phoneNumber:string
+    phone_number:string
     city:string
     date_of_birth:string
     type: ClientType

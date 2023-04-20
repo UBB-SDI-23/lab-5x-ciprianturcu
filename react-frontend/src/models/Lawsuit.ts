@@ -12,6 +12,6 @@ export interface Lawsuit{
     description:string
     type: LawsuitType
     state: string
-    courtDate: string
+    court_date: string
     client: number
 }
