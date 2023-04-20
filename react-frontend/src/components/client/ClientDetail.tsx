@@ -5,6 +5,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { Client } from "../../models/Client";
+import { BACKEND_API_URL } from "../../constants";
 
 export const ClientDetails = () => {
     const {clientId} = useParams();
@@ -12,7 +13,7 @@ export const ClientDetails = () => {
 
     useEffect(() => {
         const fetchClient =async () => {
-            const response = await fetch(`../../api/client/${clientId}/`);
+            const response = await fetch(`${BACKEND_API_URL}/client/${clientId}/`);
             const client = await response.json();
             setClient(client);
             console.log(client);

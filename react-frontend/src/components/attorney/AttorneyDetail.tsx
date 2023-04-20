@@ -5,6 +5,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { Attorney } from "../../models/Attorney";
+import { BACKEND_API_URL } from "../../constants";
 
 export const AttorneyDetails = () => {
     const {attorneyId} = useParams();
@@ -12,7 +13,7 @@ export const AttorneyDetails = () => {
 
     useEffect(() => {
         const fetchAttorney =async () => {
-            const response = await fetch(`../../api/client/${attorneyId}/`);
+            const response = await fetch(`${BACKEND_API_URL}/attorney/${attorneyId}/`);
             const attorney = await response.json();
             setAttorney(attorney);
             console.log(attorney);
@@ -24,7 +25,7 @@ export const AttorneyDetails = () => {
         <Container>
         <Card>
             <CardContent>
-                <IconButton component={Link} sx={{ mr: 3 }} to={`/client`}>
+                <IconButton component={Link} sx={{ mr: 3 }} to={`/attorney`}>
                     <ArrowBackIcon />
                 </IconButton>{" "}
                 <h1 style={{textAlign:"center"}}>Attorney Details</h1>

@@ -27,7 +27,7 @@ export const AllClients = () => {
 
 	useEffect(() => {
 		setLoading(true);
-		fetch(`../api/client/`)
+		fetch(`${BACKEND_API_URL}/client/`)
 			.then((response) => response.json())
 			.then((data) => {
 				setClients(data);

@@ -10,7 +10,7 @@ export const AttorneyDelete = () => {
 
 	const handleDelete = async (event: { preventDefault: () => void }) => {
 		event.preventDefault();
-		await axios.delete(`../../api/attorney/${attorneyId}`);
+		await axios.delete(`${BACKEND_API_URL}/attorney/${attorneyId}`);
 		navigate("/attorney");
 	};
 

@@ -24,7 +24,7 @@ export const ClientUpdate = () => {
 
 	useEffect(() => {
 		const fetchClient = async () => {
-			const response = await fetch(`../../api/client/${clientId}/`);
+			const response = await fetch(`${BACKEND_API_URL}/client/${clientId}/`);
 			const client = await response.json();
 			setClient({
 				name: client.name,

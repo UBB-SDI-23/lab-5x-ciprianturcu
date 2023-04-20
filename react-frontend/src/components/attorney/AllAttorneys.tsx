@@ -27,7 +27,7 @@ export const AllAttorneys = () => {
 
 	useEffect(() => {
 		setLoading(true);
-		fetch(`../api/attorney/`)
+		fetch(`${BACKEND_API_URL}/attorney/`)
 			.then((response) => response.json())
 			.then((data) => {
 				setAttorneys(data);

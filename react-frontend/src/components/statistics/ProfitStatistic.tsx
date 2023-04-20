@@ -14,13 +14,14 @@ import {
 import { useEffect, useState } from "react";
 import { useResolvedPath } from "react-router-dom";
 import { Profit } from "../../models/Profit";
+import { BACKEND_API_URL } from "../../constants";
 
 export const ProfitStatistic = () =>{
     const[loading, setLoading] = useState(true);
     const[profits, setProfits] = useState([]);
 
     useEffect(() => {
-        fetch("../../api/profits")
+        fetch(`${BACKEND_API_URL}/profits`)
             .then(response => response.json())
             .then(data => {
                 setProfits(data);

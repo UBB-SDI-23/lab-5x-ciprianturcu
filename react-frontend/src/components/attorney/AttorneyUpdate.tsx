@@ -44,7 +44,7 @@ export const AttorneyUpdate = () => {
 	const updateAttorney = async (event: { preventDefault: () => void }) => {
 		event.preventDefault();
 		try{
-			await axios.put(`../../api/attorney/${attorneyId}/`, attorney);
+			await axios.put(`${BACKEND_API_URL}/attorney/${attorneyId}/`, attorney);
 			navigate(`/attorney/${attorneyId}/details`)
 		}catch(error)
 		{

@@ -23,7 +23,7 @@ export const AttorneyAdd = () => {
 	const addAttorney = async (event: { preventDefault: () => void }) => {
 		event.preventDefault();
 		try {
-			await axios.post(`../../api/attorney/`, attorney);
+			await axios.post(`${BACKEND_API_URL}/attorney/`, attorney);
 			navigate("/attorney");
 		} catch (error) {
 			console.log(error);
