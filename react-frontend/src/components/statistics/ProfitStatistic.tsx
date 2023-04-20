@@ -21,7 +21,7 @@ export const ProfitStatistic = () =>{
     const[profits, setProfits] = useState([]);
 
     useEffect(() => {
-        fetch(`${BACKEND_API_URL}/profits`)
+        fetch(`${BACKEND_API_URL}/profits/`)
             .then(response => response.json())
             .then(data => {
                 setProfits(data);
