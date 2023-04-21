@@ -19,6 +19,11 @@ import { AttorneyDetails } from "./components/attorney/AttorneyDetail";
 import { AttorneyUpdate } from "./components/attorney/AttorneyUpdate";
 import { AttorneyDelete } from "./components/attorney/AttorneyDelete";
 import { AttorneyAdd } from "./components/attorney/AttorneyAdd";
+import { AllLawsuits } from "./components/lawsuit/AllLawsuits";
+import { LawsuitDetails } from "./components/lawsuit/LawsuitDetail";
+import { LawsuitUpdate } from "./components/lawsuit/LawsuitUpdate";
+import { LawsuitDelete } from "./components/lawsuit/LawsuitDelete";
+import { LawsuitAdd } from "./components/lawsuit/LawsuitAdd";
 
 function App() {
 	return (
@@ -37,6 +42,11 @@ function App() {
 					<Route path="/attorney/:attorneyId/edit" element={<AttorneyUpdate />} />
 					<Route path="/attorney/:attorneyId/delete" element={<AttorneyDelete />} />
 					<Route path="/attorney/add" element={<AttorneyAdd />} />
+					<Route path="/lawsuit" element={<AllLawsuits />} />
+					<Route path="/lawsuit/:lawsuitId/details" element={<LawsuitDetails />} />
+					<Route path="/lawsuit/:lawsuitId/edit" element={<LawsuitUpdate />} />
+					<Route path="/lawsuit/:lawsuitId/delete" element={<LawsuitDelete />} />
+					<Route path="/lawsuit/add" element={<LawsuitAdd />} />
 					<Route path="/top-profits" element={<ProfitStatistic/>} />
 				</Routes>
 			</Router>

@@ -10,7 +10,7 @@ import { Lawsuit, LawsuitType } from "../../models/Lawsuit";
 import { Client, ClientType } from "../../models/Client";
 import { debounce } from "lodash";
 
-export const AttorneyUpdate = () => {
+export const LawsuitUpdate = () => {
 	const navigate = useNavigate();
 	const { lawsuitId } = useParams();
 	const [loading, setLoading] = useState(true);
