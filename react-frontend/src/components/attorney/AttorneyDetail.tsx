@@ -34,7 +34,7 @@ export const AttorneyDetails = () => {
                 <p style={{textAlign:"left"}}>Birthday: {attorney?.date_of_birth}</p>
                 <p style={{textAlign:"left"}}>Experience: {attorney?.experience}</p>
                 <p style={{textAlign:"left"}}>City: {attorney?.city}</p>
-                <p style={{textAlign:"left"}}>Lawsuits: {attorney?.fee}</p>
+                <p style={{textAlign:"left"}}>Fee: {attorney?.fee}</p>
                 
             </CardContent>
             <CardActions>

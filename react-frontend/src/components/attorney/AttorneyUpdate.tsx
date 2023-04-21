@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, IconButton, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import { Backdrop, Button, Card, CardActions, CardContent, IconButton, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { Container } from "@mui/system";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -25,7 +25,7 @@ export const AttorneyUpdate = () => {
 
 	useEffect(() => {
 		const fetchAttorney = async () => {
-			const response = await fetch(`../../api/attorney/${attorneyId}/`);
+			const response = await fetch(`${BACKEND_API_URL}/attorney/${attorneyId}/`);
 			const attorney = await response.json();
 			setAttorney({
 				name: attorney.name,

@@ -1,3 +1,5 @@
+import { Client } from "./Client"
+
 export enum LawsuitType{
     CIVIL = "Civil",
     COMMERCIAL = "Commercial",
@@ -13,5 +15,5 @@ export interface Lawsuit{
     type: LawsuitType
     state: string
     court_date: string
-    client: number
+    client: Client
 }
