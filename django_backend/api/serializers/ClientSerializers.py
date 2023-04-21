@@ -25,3 +25,8 @@ class ClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
         fields = ('id','name', 'phone_number', 'city', 'date_of_birth', 'type', 'lawsuits')
+
+class ClientForAutocompleteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Client
+        fields = '__all__'

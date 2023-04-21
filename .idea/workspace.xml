@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="164b0c84-a840-4354-a145-b096286aa6ff" name="Changes" comment="restructure of files">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/components/attorney/AllAttorneys.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/components/attorney/AllAttorneys.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/components/attorney/AttorneyAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/components/attorney/AttorneyAdd.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/components/attorney/AttorneyDelete.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/components/attorney/AttorneyDelete.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-frontend/src/components/attorney/AttorneyDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/components/attorney/AttorneyDetail.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/components/attorney/AttorneyUpdate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/components/attorney/AttorneyUpdate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/components/client/AllClients.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/components/client/AllClients.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/components/client/ClientAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/components/client/ClientAdd.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/components/client/ClientDelete.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/components/client/ClientDelete.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/components/client/ClientDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/components/client/ClientDetail.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/components/client/ClientUpdate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/components/client/ClientUpdate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/components/statistics/ProfitStatistic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/components/statistics/ProfitStatistic.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/constants.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +35,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/MPP/lawfirm",
+    "last_opened_file_path": "D:/MPP/lawfirm/django_backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,7 +77,7 @@
       <workItem from="1680432171561" duration="596000" />
       <workItem from="1680435316963" duration="422000" />
       <workItem from="1680450187418" duration="230000" />
-      <workItem from="1682002522369" duration="2463000" />
+      <workItem from="1682002522369" duration="3074000" />
     </task>
     <task id="LOCAL-00001" summary="database changes (moving to postgres)">
       <created>1680356864238</created>

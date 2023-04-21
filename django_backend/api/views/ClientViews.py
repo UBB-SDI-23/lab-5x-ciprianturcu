@@ -1,18 +1,16 @@
 from rest_framework import status, generics
 from rest_framework.views import APIView
 
-
 from rest_framework.response import Response
 
 from api.models.Client import Client
-from api.serializers.ClientSerializers import ClientSerializer
+from api.serializers.ClientSerializers import ClientSerializer, ClientForAutocompleteSerializer
 from api.serializers.LawsuitSerializers import LawsuitSerializer
 
 
 class LawsuitsOfClientList(APIView):
     def post(self, request, id):
         lawsuits = request.data
-        clients = request.data
         msg = "CREATED"
 
         for lawsuit_data in lawsuits:
@@ -21,7 +19,6 @@ class LawsuitsOfClientList(APIView):
             if serializer.is_valid():
                 serializer.save()
         return Response(msg, status=status.HTTP_201_CREATED)
-
 
 
 class ClientList(generics.ListCreateAPIView):
@@ -37,3 +34,13 @@ class ClientList(generics.ListCreateAPIView):
 class ClientDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ClientSerializer
     queryset = Client.objects.all()
+
+
+class ClientViewForAutocomplete(APIView):
+    serializer_class = ClientForAutocompleteSerializer
+
+    def get(self, request, *args, **kwargs):
+        query = request.GET.get('query')
+        clients = Client.objects.filter(name__icontains=query).order_by('name')[:20]
+        serializer = ClientForAutocompleteSerializer(clients, many=True)
+        return Response(serializer.data)
