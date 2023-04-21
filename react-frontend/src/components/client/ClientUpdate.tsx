@@ -42,7 +42,7 @@ export const ClientUpdate = () => {
 	const updateClient = async (event: { preventDefault: () => void }) => {
 		event.preventDefault();
 		try{
-			await axios.put(`../../api/client/${clientId}/`, client);
+			await axios.put(`${BACKEND_API_URL}/client/${clientId}/`, client);
 			navigate(`/client/${clientId}/details`)
 		}catch(error)
 		{
