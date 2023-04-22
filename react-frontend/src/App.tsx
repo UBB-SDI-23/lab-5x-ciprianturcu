@@ -24,6 +24,11 @@ import { LawsuitDetails } from "./components/lawsuit/LawsuitDetail";
 import { LawsuitUpdate } from "./components/lawsuit/LawsuitUpdate";
 import { LawsuitDelete } from "./components/lawsuit/LawsuitDelete";
 import { LawsuitAdd } from "./components/lawsuit/LawsuitAdd";
+import { AllAOLs } from "./components/attorneyOnLawsuit/AllAOL";
+import { AOLDetails } from "./components/attorneyOnLawsuit/AOLDetail";
+import { AOLUpdate } from "./components/attorneyOnLawsuit/AOLUpdate";
+import { AOLDelete } from "./components/attorneyOnLawsuit/AOLDelete";
+import { AOLAdd } from "./components/attorneyOnLawsuit/AOLAdd";
 
 function App() {
 	return (
@@ -47,6 +52,11 @@ function App() {
 					<Route path="/lawsuit/:lawsuitId/edit" element={<LawsuitUpdate />} />
 					<Route path="/lawsuit/:lawsuitId/delete" element={<LawsuitDelete />} />
 					<Route path="/lawsuit/add" element={<LawsuitAdd />} />
+					<Route path="/attorney-on-lawsuit" element={<AllAOLs />} />
+					<Route path="/attorney-on-lawsuit/:aolId/details" element={<AOLDetails />} />
+					<Route path="/attorney-on-lawsuit/:aolId/edit" element={<AOLUpdate />} />
+					<Route path="/attorney-on-lawsuit/:aolId/delete" element={<AOLDelete />} />
+					<Route path="/attorney-on-lawsuit/add" element={<AOLAdd />} />
 					<Route path="/top-profits" element={<ProfitStatistic/>} />
 				</Routes>
 			</Router>
