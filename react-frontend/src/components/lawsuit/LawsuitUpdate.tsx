@@ -38,13 +38,6 @@ export const LawsuitUpdate = () => {
 	const debouncedFetchSuggestions = useCallback(debounce(fetchSuggestions, 500), []);
 
 	useEffect(() => {
-		return () => {
-			debouncedFetchSuggestions.cancel();
-		};
-
-	}, [debouncedFetchSuggestions]);
-
-	useEffect(() => {
 		const fetchlawsuit = async () => {
 			const response = await fetch(`${BACKEND_API_URL}/lawsuit/${lawsuitId}/`);
 			const lawsuit = await response.json();
@@ -59,7 +52,10 @@ export const LawsuitUpdate = () => {
 			console.log(lawsuit);
 		};
 		fetchlawsuit();
-	}, [lawsuitId]);
+		return () => {
+			debouncedFetchSuggestions.cancel();
+		};
+	}, [lawsuitId, debouncedFetchSuggestions]);
 
 	const updateLawsuit = async (event: { preventDefault: () => void }) => {
 		event.preventDefault();

@@ -52,19 +52,19 @@ export const AOLUpdate = () => {
 	const debouncedFetchSuggestionsLawsuit = useCallback(debounce(fetchSuggestionsLawsuit, 500), []);
     const debouncedFetchSuggestionsAttorney = useCallback(debounce(fetchSuggestionsAttorney, 500), []);
 
-	useEffect(() => {
-		return () => {
-			debouncedFetchSuggestionsLawsuit.cancel();
-		};
+	// useEffect(() => {
+	// 	return () => {
+	// 		debouncedFetchSuggestionsLawsuit.cancel();
+	// 	};
 
-	}, [debouncedFetchSuggestionsLawsuit]);
+	// }, [debouncedFetchSuggestionsLawsuit]);
 
-    useEffect(() => {
-		return () => {
-			debouncedFetchSuggestionsAttorney.cancel();
-		};
+    // useEffect(() => {
+	// 	return () => {
+	// 		debouncedFetchSuggestionsAttorney.cancel();
+	// 	};
 
-	}, [debouncedFetchSuggestionsAttorney]);
+	// }, [debouncedFetchSuggestionsAttorney]);
 
 	useEffect(() => {
 		const fetchAOL = async () => {
@@ -81,7 +81,11 @@ export const AOLUpdate = () => {
 			console.log(aol);
 		};
 		fetchAOL();
-	}, [aolId]);
+        return () => {
+			debouncedFetchSuggestionsLawsuit.cancel();
+            debouncedFetchSuggestionsAttorney.cancel();
+		};
+	}, [aolId, debouncedFetchSuggestionsLawsuit, debouncedFetchSuggestionsAttorney]);
 
 	const updateAOL = async (event: { preventDefault: () => void }) => {
 		event.preventDefault();
