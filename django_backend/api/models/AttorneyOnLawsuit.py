@@ -11,4 +11,4 @@ class AttorneyOnLawsuit(models.Model):
     work_type = models.CharField(max_length=50,
                                 choices=[('Documents', 'Documents'), ('Statement preparation', 'Statement preparation'),
                                          ('Evidence collection', 'Evidence collection')])
-    description = models.CharField(max_length=500)
+    description = models.CharField(max_length=500, default="")
