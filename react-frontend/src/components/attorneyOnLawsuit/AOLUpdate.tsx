@@ -124,7 +124,7 @@ export const AOLUpdate = () => {
 							id = "attorney"
 							options = {attorneys}
 							getOptionLabel={(option) => `${option.name} - ${option.specialization}`}
-							renderInput={(params) => <TextField {...params} label="Attorney" variant="outlined" required/>}
+							renderInput={(params) => <TextField {...params} label="Attorney" variant="outlined"/>}
 							filterOptions={(x) => x}
 							onInputChange={handleInputChangeAttorney}
 							onChange={(event, value) => {
@@ -139,7 +139,7 @@ export const AOLUpdate = () => {
 							id = "lawsuit"
 							options = {lawsuits}
 							getOptionLabel={(option) => `${option.description} - ${option.type}`}
-							renderInput={(params) => <TextField {...params} label="Lawsuit" variant="outlined" required/>}
+							renderInput={(params) => <TextField {...params} label="Lawsuit" variant="outlined"/>}
 							filterOptions={(x) => x}
 							onInputChange={handleInputChangeLawsuit}
 							onChange={(event, value) => {
