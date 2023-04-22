@@ -26,7 +26,7 @@ export const AOLAdd = () => {
 	
 	const fetchSuggestionsLawsuit = async (query : string) => {
 		try{
-			const response = await axios.get<Lawsuit[]>(`${BACKEND_API_URL}/lawsuit/autocomplete?query=${query}`);
+			const response = await axios.get<Lawsuit[]>(`${BACKEND_API_URL}/lawsuit/autocomplete/?query=${query}`);
 			const data = await response.data;
 			setLawsuits(data);
 		}
@@ -37,7 +37,7 @@ export const AOLAdd = () => {
 
     const fetchSuggestionsAttorney = async (query : string) => {
 		try{
-			const response = await axios.get<Attorney[]>(`${BACKEND_API_URL}/attorney/autocomplete?query=${query}`);
+			const response = await axios.get<Attorney[]>(`${BACKEND_API_URL}/attorney/autocomplete/?query=${query}`);
 			const data = await response.data;
 			setAttorneys(data);
 		}
