@@ -24,8 +24,8 @@ class LawsuitSerializerWithDepth(serializers.ModelSerializer):
         return data
     class Meta:
         model = Lawsuit
-        depth=1
-        fields='__all__'
+        depth = 1
+        fields = '__all__'
 
 
 
