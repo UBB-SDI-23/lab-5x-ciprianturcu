@@ -71,9 +71,7 @@ export const AllAOLs = () => {
 										{index + 1}
 									</TableCell>
 									<TableCell component="th" scope="row">
-										<Link to={`/aol/${aol.id}/details`} title="View attorney-lawsuit details">
 											{aol.attorney.name}
-										</Link>
 									</TableCell>
 									<TableCell align="right">{aol.lawsuit.description}</TableCell>
 									<TableCell align="right">{aol.att_role}</TableCell>
@@ -82,17 +80,17 @@ export const AllAOLs = () => {
 										<IconButton
 											component={Link}
 											sx={{ mr: 3 }}
-											to={`/aol/${aol.id}/details`}>
+											to={`/attorney-on-lawsuit/${aol.id}/details`}>
 											<Tooltip title="View attorney-lawsuit details" arrow>
 												<ReadMoreIcon color="primary" />
 											</Tooltip>
 										</IconButton>
 
-										<IconButton component={Link} sx={{ mr: 3 }} to={`/aol/${aol.id}/edit`}>
+										<IconButton component={Link} sx={{ mr: 3 }} to={`/attorney-on-lawsuit/${aol.id}/edit`}>
 											<EditIcon />
 										</IconButton>
 
-										<IconButton component={Link} sx={{ mr: 3 }} to={`/aol/${aol.id}/delete`}>
+										<IconButton component={Link} sx={{ mr: 3 }} to={`/attorney-on-lawsuit/${aol.id}/delete`}>
 											<DeleteForeverIcon sx={{ color: "red" }} />
 										</IconButton>
 									</TableCell>

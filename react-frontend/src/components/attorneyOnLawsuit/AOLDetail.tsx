@@ -37,11 +37,11 @@ export const AOLDetails = () => {
                 <p style={{textAlign:"left"}}>Description: {aol?.description}</p>
             </CardContent>
             <CardActions>
-                <IconButton component={Link} sx={{ mr: 3 }} to={`/aol/${aol?.id}/edit`}>
+                <IconButton component={Link} sx={{ mr: 3 }} to={`/attorney-on-lawsuit/${aol?.id}/edit`}>
                     <EditIcon />
                 </IconButton>
 
-                <IconButton component={Link} sx={{ mr: 3 }} to={`/aol/${aol?.id}/delete`}>
+                <IconButton component={Link} sx={{ mr: 3 }} to={`/attorney-on-lawsuit/${aol?.id}/delete`}>
                     <DeleteForeverIcon sx={{ color: "red" }} />
                 </IconButton>
             </CardActions>
