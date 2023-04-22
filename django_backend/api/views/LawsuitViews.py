@@ -2,7 +2,7 @@ from django.db.models import Sum, F
 from rest_framework import generics
 
 from api.models.Lawsuit import Lawsuit
-from api.serializers.LawsuitSerializers import LawsuitSerializer, LawsuitProfitReportDTO
+from api.serializers.LawsuitSerializers import LawsuitSerializer, LawsuitProfitReportDTO, LawsuitSerializerWithDepth
 
 
 class LawsuitList(generics.ListCreateAPIView):
@@ -22,7 +22,7 @@ class LawsuitList(generics.ListCreateAPIView):
 
 
 class LawsuitDetail(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = LawsuitSerializer
+    serializer_class = LawsuitSerializerWithDepth
     queryset = Lawsuit.objects.all()
 
 
