@@ -11,25 +11,26 @@ import { debounce } from "lodash";
 
 export const LawsuitAdd = () => {
 	const navigate = useNavigate();
-	const [lawsuit, setLawsuit] = useState<Lawsuit>({
+	const [lawsuit, setLawsuit] = useState({
 		description: "",
 		type: LawsuitType['CIVIL'],
 		state:"",
 		court_date: "",
-		client: {
-			name: "",
-			phone_number: "",
-			city:"",
-			date_of_birth: "",
-			type: ClientType['PHYSICAL'],
-		},
+		// client: {
+		// 	name: "",
+		// 	phone_number: "",
+		// 	city:"",
+		// 	date_of_birth: "",
+		// 	type: ClientType['PHYSICAL'],
+		// },
+		client:1,
 	});
 
 	const [clients, setClients] = useState<Client[]>([]);
 	
 	const fetchSuggestions = async (query : string) => {
 		try{
-			const response = await axios.get<Client[]>(`${BACKEND_API_URL}/client/autocomplete?query=${query}`);
+			const response = await axios.get<Client[]>(`${BACKEND_API_URL}/client/autocomplete/?query=${query}`);
 			const data = await response.data;
 			setClients(data);
 			console.log(clients)
@@ -122,7 +123,7 @@ export const LawsuitAdd = () => {
 								if(value)
 								{
 									console.log(value);
-									setLawsuit({...lawsuit, client: value})
+									setLawsuit({...lawsuit, client: value.id as unknown as number})
 								}
 							}}
 						/>
