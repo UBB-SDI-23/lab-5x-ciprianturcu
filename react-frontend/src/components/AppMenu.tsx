@@ -65,6 +65,16 @@ export const AppMenu = () => {
 					</Button>
 
 					<Button
+						variant={path.startsWith("/attorney-travel") ? "outlined" : "text"}
+						to="/attorney-travel"
+						component={Link}
+						color="inherit"
+						sx={{ mr: 5 }}
+						startIcon={<LocalLibraryIcon />}>
+						Attorney Travel Statistic
+					</Button>
+
+					<Button
 						variant={path.startsWith("/top-profits") ? "outlined" : "text"}
 						to="/top-profits"
 						component={Link}
