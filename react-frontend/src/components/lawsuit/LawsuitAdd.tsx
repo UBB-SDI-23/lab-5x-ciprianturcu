@@ -29,7 +29,7 @@ export const LawsuitAdd = () => {
 	
 	const fetchSuggestions = async (query : string) => {
 		try{
-			const response = await axios.get<Client[]>(`${BACKEND_API_URL}/client/autocomplete?querry=${query}`);
+			const response = await axios.get<Client[]>(`${BACKEND_API_URL}/client/autocomplete?query=${query}`);
 			const data = await response.data;
 			setClients(data);
 		}

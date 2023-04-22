@@ -5,7 +5,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { BACKEND_API_URL } from "../../constants";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import axios from "axios";
-import { Attorney, ExperienceType, SpecializationType } from "../../models/Attorney";
 import { Lawsuit, LawsuitType } from "../../models/Lawsuit";
 import { Client, ClientType } from "../../models/Client";
 import { debounce } from "lodash";
@@ -33,7 +32,7 @@ export const LawsuitUpdate = () => {
 	
 	const fetchSuggestions = async (query : string) => {
 		try{
-			const response = await axios.get<Client[]>(`${BACKEND_API_URL}/client/autocomplete?querry=${query}`);
+			const response = await axios.get<Client[]>(`${BACKEND_API_URL}/client/autocomplete?query=${query}`);
 			const data = await response.data;
 			setClients(data);
 		}
@@ -90,7 +89,7 @@ export const LawsuitUpdate = () => {
 		<Container>
 			<Card>
 				<CardContent>
-					<IconButton component={Link} sx={{ mr: 3 }} to={`/attorney`}>
+					<IconButton component={Link} sx={{ mr: 3 }} to={`/lawsuit`}>
 						<ArrowBackIcon />
 					</IconButton>{" "}
 					<form onSubmit={updateLawsuit}>
