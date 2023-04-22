@@ -6,6 +6,7 @@ from api.models.AttorneyOnLawsuit import AttorneyOnLawsuit
 class AttorneyOnLawsuitSerializer(serializers.ModelSerializer):
     class Meta:
         model = AttorneyOnLawsuit
+        depth = 1
         fields = '__all__'
 
 
