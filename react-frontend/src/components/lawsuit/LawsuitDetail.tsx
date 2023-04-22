@@ -33,7 +33,7 @@ export const LawsuitDetails = () => {
                 <p style={{textAlign:"left"}}>Type: {lawsuit?.type}</p>
                 <p style={{textAlign:"left"}}>State: {lawsuit?.state}</p>
                 <p style={{textAlign:"left"}}>Court Date: {lawsuit?.court_date}</p>
-                <p style={{textAlign:"left"}}>Client: {lawsuit?.client.name}</p>
+                <p style={{textAlign:"left"}}>Client: {lawsuit?.client?.name}</p>
             </CardContent>
             <CardActions>
                 <IconButton component={Link} sx={{ mr: 3 }} to={`/lawsuit/${lawsuit?.id}/edit`}>
