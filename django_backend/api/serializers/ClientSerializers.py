@@ -30,3 +30,8 @@ class ClientForAutocompleteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
         fields = '__all__'
+
+class ClientForLawsuitSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Client
+        fields = ('id','name', 'phone_number', 'city', 'date_of_birth', 'type')

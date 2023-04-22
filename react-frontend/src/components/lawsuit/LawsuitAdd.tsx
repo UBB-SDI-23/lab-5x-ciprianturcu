@@ -115,7 +115,7 @@ export const LawsuitAdd = () => {
 							options = {clients}
 							getOptionLabel={(option) => `${option.name} - ${option.phone_number}`}
 							renderInput={(params) => <TextField {...params} label="Client" variant="outlined" required/>}
-							filterOptions={(x) => x}
+							filterOptions={(options, state) => options.filter((option) => option.name.toLowerCase().includes(state.inputValue.toLowerCase()))}
 							onInputChange={handleInputChange}
 							onChange={(event, value) => {
 								if(value)
