@@ -13,28 +13,9 @@ import { Attorney, ExperienceType, SpecializationType } from "../../models/Attor
 
 export const AOLAdd = () => {
 	const navigate = useNavigate();
-	const [aol, setAOL] = useState<AttorneyOnLawsuit>({
-		attorney:{
-            name: "",
-		    specialization: SpecializationType['CIVIL'],
-		    date_of_birth:"",
-		    experience: ExperienceType['JUNIOR'],
-            city:"",
-		    fee:0,
-        },
-		lawsuit:{
-            description: "",
-		    type: LawsuitType['CIVIL'],
-		    state:"",
-		    court_date: "",
-		    client: {
-			    name: "",
-			    phone_number: "",
-			    city:"",
-			    date_of_birth: "",
-			    type: ClientType['PHYSICAL'],
-		    },
-        },
+	const [aol, setAOL] = useState({
+		attorney:1,
+		lawsuit:1,
 		att_role: AttorenyRole['PRIMARY'],
         work_type: WorkType['EVIDENCE'],
         description: "",
@@ -125,7 +106,7 @@ export const AOLAdd = () => {
 								if(value)
 								{
 									console.log(value);
-									setAOL({...aol, attorney: value})
+									setAOL({...aol, attorney: value.id})
 								}
 							}}
 						/>
@@ -140,7 +121,7 @@ export const AOLAdd = () => {
 								if(value)
 								{
 									console.log(value);
-									setAOL({...aol, lawsuit: value})
+									setAOL({...aol, lawsuit: value.id})
 								}
 							}}
 						/>
