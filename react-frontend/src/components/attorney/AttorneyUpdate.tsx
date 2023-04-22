@@ -12,7 +12,7 @@ export const AttorneyUpdate = () => {
 	const { attorneyId } = useParams();
 	const [loading, setLoading] = useState(true);
 	
-	const [attorney, setAttorney] = useState<Attorney>({
+	const [attorney, setAttorney] = useState({
 		name: "",
 		specialization: SpecializationType['CIVIL'],
 		date_of_birth:"",

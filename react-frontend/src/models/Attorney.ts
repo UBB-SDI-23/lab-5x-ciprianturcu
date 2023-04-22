@@ -14,7 +14,7 @@ export enum ExperienceType{
 }
 
 export interface Attorney{
-    id?:number,
+    id:number,
     name:string,
     specialization:SpecializationType,
     date_of_birth:string,

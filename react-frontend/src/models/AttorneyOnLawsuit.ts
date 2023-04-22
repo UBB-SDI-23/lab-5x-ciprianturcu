@@ -13,7 +13,7 @@ export enum WorkType{
 }
 
 export interface AttorneyOnLawsuit{
-    id?:number,
+    id:number,
     attorney: Attorney,
     lawsuit: Lawsuit,
     att_role: AttorenyRole,

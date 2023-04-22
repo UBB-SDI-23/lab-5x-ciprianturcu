@@ -14,7 +14,7 @@ export const ClientUpdate = () => {
 	const { clientId } = useParams();
 	const [loading, setLoading] = useState(true);
 	
-	const [client, setClient] = useState<Client>({
+	const [client, setClient] = useState({
 		name: "",
 		phone_number: "",
 		city: "",

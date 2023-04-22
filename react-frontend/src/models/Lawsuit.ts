@@ -10,7 +10,7 @@ export enum LawsuitType{
 }
 
 export interface Lawsuit{
-    id?: number
+    id: number
     description:string
     type: LawsuitType
     state: string

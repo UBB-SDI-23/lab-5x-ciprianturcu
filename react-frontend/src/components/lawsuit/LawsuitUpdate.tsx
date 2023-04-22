@@ -14,18 +14,12 @@ export const LawsuitUpdate = () => {
 	const { lawsuitId } = useParams();
 	const [loading, setLoading] = useState(true);
 	
-	const [lawsuit, setLawsuit] = useState<Lawsuit>({
+	const [lawsuit, setLawsuit] = useState({
 		description: "",
 		type: LawsuitType['CIVIL'],
 		state:"",
 		court_date: "",
-		client: {
-			name: "",
-			phone_number: "",
-			city:"",
-			date_of_birth: "",
-			type: ClientType['PHYSICAL'],
-		},
+		client: 1,
 	});
 
     const [clients, setClients] = useState<Client[]>([]);
@@ -142,7 +136,7 @@ export const LawsuitUpdate = () => {
 								if(value)
 								{
 									console.log(value);
-									setLawsuit({...lawsuit, client: value})
+									setLawsuit({...lawsuit, client: value.id})
 								}
 							}}
 						/>

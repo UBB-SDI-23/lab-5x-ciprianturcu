@@ -6,7 +6,7 @@ export enum ClientType{
 }
 
 export interface Client{
-    id?: number
+    id: number
     name : string
     phone_number:string
     city:string

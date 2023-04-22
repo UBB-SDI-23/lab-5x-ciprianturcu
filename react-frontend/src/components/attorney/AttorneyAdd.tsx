@@ -9,7 +9,7 @@ import { Attorney, ExperienceType, SpecializationType } from "../../models/Attor
 
 export const AttorneyAdd = () => {
 	const navigate = useNavigate();
-	const [attorney, setAttorney] = useState<Attorney>({
+	const [attorney, setAttorney] = useState({
 		name: "",
 		specialization: SpecializationType['CIVIL'],
 		date_of_birth:"",
