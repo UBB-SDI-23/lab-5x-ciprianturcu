@@ -25,7 +25,7 @@ export const LawsuitDetails = () => {
         <Container>
         <Card>
             <CardContent>
-                <IconButton component={Link} sx={{ mr: 3 }} to={`/attorney`}>
+                <IconButton component={Link} sx={{ mr: 3 }} to={`/lawsuit`}>
                     <ArrowBackIcon />
                 </IconButton>{" "}
                 <h1 style={{textAlign:"center"}}>Lawsuit Details</h1>
