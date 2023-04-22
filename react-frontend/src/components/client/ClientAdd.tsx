@@ -11,7 +11,7 @@ import axios from "axios";
 
 export const ClientAdd = () => {
 	const navigate = useNavigate();
-	const [client, setClient] = useState<Client>({
+	const [client, setClient] = useState({
 		name: "",
 		phone_number: "",
 		city:"",
