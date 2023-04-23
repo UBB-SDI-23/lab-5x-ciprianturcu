@@ -80,6 +80,7 @@ export const AllLawsuits = () => {
 								<TableCell align="right">Type</TableCell>
 								<TableCell align="right">State</TableCell>
 								<TableCell align="center">Court Date</TableCell>
+								<TableCell align="center">Nr. of attorneys</TableCell>
 							</TableRow>
 						</TableHead>
 						<TableBody>
@@ -96,6 +97,7 @@ export const AllLawsuits = () => {
 									<TableCell align="right">{lawsuit.type}</TableCell>
 									<TableCell align="right">{lawsuit.state}</TableCell>
 									<TableCell align="right">{lawsuit.court_date}</TableCell>
+									<TableCell align="right">{lawsuit.nb_attorneys}</TableCell>
 									<TableCell align="right">
 										<IconButton
 											component={Link}
