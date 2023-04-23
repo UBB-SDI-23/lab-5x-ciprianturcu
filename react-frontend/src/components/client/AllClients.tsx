@@ -108,6 +108,7 @@ export const AllClients = () => {
 								<TableCell align="right">City</TableCell>
 								<TableCell align="center">Birthday</TableCell>
 								<TableCell align="center">Type</TableCell>
+								<TableCell align="center">Nr. of lawsuits</TableCell>
 							</TableRow>
 						</TableHead>
 						<TableBody>
@@ -125,6 +126,7 @@ export const AllClients = () => {
 									<TableCell align="right">{client.city}</TableCell>
 									<TableCell align="right">{client.date_of_birth}</TableCell>
 									<TableCell align="right">{client.type}</TableCell>
+									<TableCell align="right">{client.nb_lawsuits}</TableCell>
 									<TableCell align="right">
 										<IconButton
 											component={Link}

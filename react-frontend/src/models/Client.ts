@@ -12,6 +12,7 @@ export interface Client{
     city:string
     date_of_birth:string
     type: ClientType
+    nb_lawsuits:number
     lawsuits?: Lawsuit[]
 }
 
