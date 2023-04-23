@@ -43,7 +43,7 @@ export const AllLawsuits = () => {
 	const fetchLawsuits = async() => {
 		setLoading(true);
 		const response = await fetch(
-			`${BACKEND_API_URL}/lawsuit/?page=${page}&page_size={pageSize}`
+			`${BACKEND_API_URL}/lawsuit/?page=${page}&page_size=${pageSize}`
 		);
 		const {count, next, previous, results} = await response.json();
 		setLawsuit(results);
