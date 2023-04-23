@@ -21,4 +21,5 @@ export interface Attorney{
     experience:ExperienceType,
     city: string
     fee: number
+    nb_lawsuits:number
 }

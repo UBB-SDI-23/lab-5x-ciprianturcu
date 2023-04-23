@@ -15,5 +15,6 @@ export interface Lawsuit{
     type: LawsuitType
     state: string
     court_date: string
+    nb_attorneys: number
     client: Client
 }
