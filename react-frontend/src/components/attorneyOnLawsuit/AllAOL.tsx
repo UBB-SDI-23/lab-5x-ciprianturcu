@@ -24,18 +24,37 @@ import { AttorneyOnLawsuit } from "../../models/AttorneyOnLawsuit";
 export const AllAOLs = () => {
 	const [loading, setLoading] = useState(false);
 	const [aols, setAOLs] = useState<AttorneyOnLawsuit[]>([]);
+	const [page, setPage] = useState(1);
+	const [pageSize, setPageSize] = useState(10);
+	const current = (page - 1) * pageSize + 1;
+
+	// useEffect(() => {
+	// 	setLoading(true);
+	// 	fetch(`${BACKEND_API_URL}/aol/`)
+	// 		.then((response) => response.json())
+	// 		.then((data) => {
+	// 			setAOLs(data);
+	// 			setLoading(false);
+	// 		});
+	// }, []);
+
+	// console.log(aols)
+
+	const fetchAOLs = async() => {
+		setLoading(true);
+		const response = await fetch(
+			`${BACKEND_API_URL}/aol/?page=${page}&page_size=${pageSize}`
+		);
+		const {count, next, previous, results} = await response.json();
+		setAOLs(results);
+		setLoading(false);
+	};
 
 	useEffect(() => {
-		setLoading(true);
-		fetch(`${BACKEND_API_URL}/aol/`)
-			.then((response) => response.json())
-			.then((data) => {
-				setAOLs(data);
-				setLoading(false);
-			});
-	}, []);
+		fetchAOLs();
+	}, [page]);
 
-	console.log(aols)
+	console.log(aols);
 
 	return (
 		<Container>
@@ -52,7 +71,7 @@ export const AllAOLs = () => {
 			)}
 
 			{!loading && aols.length > 0 && (
-				<TableContainer component={Paper}>
+				<><TableContainer component={Paper}>
 					<Table sx={{ minWidth: 650 }} aria-label="simple table">
 						<TableHead>
 							<TableRow>
@@ -61,7 +80,7 @@ export const AllAOLs = () => {
 								<TableCell align="right">Lawsuit</TableCell>
 								<TableCell align="right">Attorney Role</TableCell>
 								<TableCell align="center">Work Type</TableCell>
-                                <TableCell align="center">Description</TableCell>
+								<TableCell align="center">Description</TableCell>
 							</TableRow>
 						</TableHead>
 						<TableBody>
@@ -71,7 +90,7 @@ export const AllAOLs = () => {
 										{index + 1}
 									</TableCell>
 									<TableCell component="th" scope="row">
-											{aol.attorney.name}
+										{aol.attorney.name}
 									</TableCell>
 									<TableCell align="right">{aol.lawsuit.description}</TableCell>
 									<TableCell align="right">{aol.att_role}</TableCell>
@@ -99,6 +118,9 @@ export const AllAOLs = () => {
 						</TableBody>
 					</Table>
 				</TableContainer>
+				<Button disabled={page === 1} onClick={() => setPage(page - 1)}>Previous</Button>
+				<Button disabled={aols.length < pageSize} onClick={() => setPage(page + 1)}>Next</Button>
+				</>
 			)}
 		</Container>
 	);

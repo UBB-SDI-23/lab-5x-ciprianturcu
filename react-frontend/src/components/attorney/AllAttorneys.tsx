@@ -24,16 +24,33 @@ import { Attorney } from "../../models/Attorney";
 export const AllAttorneys = () => {
 	const [loading, setLoading] = useState(false);
 	const [attorneys, setAttorneys] = useState<Attorney[]>([]);
+	const [page, setPage] = useState(1);
+	const [pageSize, setPageSize] = useState(10);
+	const current = (page - 1) * pageSize + 1;
+
+	// useEffect(() => {
+	// 	setLoading(true);
+	// 	fetch(`${BACKEND_API_URL}/attorney/`)
+	// 		.then((response) => response.json())
+	// 		.then((data) => {
+	// 			setAttorneys(data);
+	// 			setLoading(false);
+	// 		});
+	// }, []);
+
+	const fetchAttorneys = async() => {
+		setLoading(true);
+		const response = await fetch(
+			`${BACKEND_API_URL}/attorney/?page=${page}&page_size=${pageSize}`
+		);
+		const {count, next, previous, results} = await response.json();
+		setAttorneys(results);
+		setLoading(false);
+	};
 
 	useEffect(() => {
-		setLoading(true);
-		fetch(`${BACKEND_API_URL}/attorney/`)
-			.then((response) => response.json())
-			.then((data) => {
-				setAttorneys(data);
-				setLoading(false);
-			});
-	}, []);
+		fetchAttorneys();
+	}, [page]);
 
 	console.log(attorneys)
 
@@ -52,7 +69,7 @@ export const AllAttorneys = () => {
 			)}
 
 			{!loading && attorneys.length > 0 && (
-				<TableContainer component={Paper}>
+				<><TableContainer component={Paper}>
 					<Table sx={{ minWidth: 650 }} aria-label="simple table">
 						<TableHead>
 							<TableRow>
@@ -79,7 +96,7 @@ export const AllAttorneys = () => {
 									<TableCell align="right">{attorney.date_of_birth}</TableCell>
 									<TableCell align="right">{attorney.experience}</TableCell>
 									<TableCell align="right">{attorney.city}</TableCell>
-                                    <TableCell align="right">{attorney.fee}</TableCell>
+									<TableCell align="right">{attorney.fee}</TableCell>
 									<TableCell align="right">
 										<IconButton
 											component={Link}
@@ -103,6 +120,9 @@ export const AllAttorneys = () => {
 						</TableBody>
 					</Table>
 				</TableContainer>
+				<Button disabled={page === 1} onClick={() => setPage(page - 1)}>Previous</Button>
+				<Button disabled={attorneys.length < pageSize} onClick={() => setPage(page + 1)}>Next</Button></>
+				
 			)}
 		</Container>
 	);
