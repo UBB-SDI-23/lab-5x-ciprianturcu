@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from api.models.Client import Client
 from api.serializers.ClientSerializers import ClientSerializer, ClientForAutocompleteSerializer
 from api.serializers.LawsuitSerializers import LawsuitSerializer
+from api.views.Pagination import CustomPagination
 
 
 class LawsuitsOfClientList(APIView):
@@ -23,6 +24,7 @@ class LawsuitsOfClientList(APIView):
 
 class ClientList(generics.ListCreateAPIView):
     serializer_class = ClientSerializer
+    pagination_class = CustomPagination
     queryset = Client.objects.all()
 
     # def list(self, request, *args, **kwargs):

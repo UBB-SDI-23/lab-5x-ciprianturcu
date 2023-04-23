@@ -3,10 +3,12 @@ from rest_framework import generics
 
 from api.models.Lawsuit import Lawsuit
 from api.serializers.LawsuitSerializers import LawsuitSerializer, LawsuitProfitReportDTO, LawsuitSerializerWithDepth
+from api.views.Pagination import CustomPagination
 
 
 class LawsuitList(generics.ListCreateAPIView):
     serializer_class = LawsuitSerializer
+    pagination_class = CustomPagination
 
     def get_queryset(self):
         queryset = Lawsuit.objects.all()

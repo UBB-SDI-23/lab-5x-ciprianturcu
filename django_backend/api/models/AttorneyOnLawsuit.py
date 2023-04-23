@@ -12,3 +12,7 @@ class AttorneyOnLawsuit(models.Model):
                                 choices=[('Documents', 'Documents'), ('Statement preparation', 'Statement preparation'),
                                          ('Evidence collection', 'Evidence collection')])
     description = models.CharField(max_length=500, default="")
+
+    class Meta:
+        ordering = ['id']
+        indexes = [models.Index(fields=["attorney", "lawsuit"])]

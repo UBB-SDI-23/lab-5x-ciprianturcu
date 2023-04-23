@@ -14,3 +14,6 @@ class AttorneyTravelDTO(serializers.Serializer):
     name = serializers.CharField()
     city = serializers.CharField()
     lawsuit_state = serializers.CharField()
+
+    class Meta:
+        ordering = ['name']

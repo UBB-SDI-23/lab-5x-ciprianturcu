@@ -2,11 +2,13 @@ from rest_framework import generics
 
 from api.models.Attorney import Attorney
 from api.serializers.AttorneySerializers import AttorneySerializer
+from api.views.Pagination import CustomPagination
 
 
 class AttorneyList(generics.ListCreateAPIView):
     queryset = Attorney.objects.all()
     serializer_class = AttorneySerializer
+    pagination_class = CustomPagination
 
     def get_queryset(self):
         queryset = Attorney.objects.all()
