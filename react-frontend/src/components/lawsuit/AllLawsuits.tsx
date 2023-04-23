@@ -24,18 +24,35 @@ import { Lawsuit } from "../../models/Lawsuit";
 export const AllLawsuits = () => {
 	const [loading, setLoading] = useState(false);
 	const [lawsuits, setLawsuit] = useState<Lawsuit[]>([]);
+	const [page, setPage] = useState(1);
+	const [pageSize, setPageSize] = useState(10);
+	const current = (page - 1) * pageSize + 1;
+
+	// useEffect(() => {
+	// 	setLoading(true);
+	// 	fetch(`${BACKEND_API_URL}/lawsuit/`)
+	// 		.then((response) => response.json())
+	// 		.then((data) => {
+	// 			setLawsuit(data);
+	// 			setLoading(false);
+	// 		});
+	// }, []);
+
+	// console.log(lawsuits)
+
+	const fetchLawsuits = async() => {
+		setLoading(true);
+		const response = await fetch(
+			`${BACKEND_API_URL}/lawsuit?page=${page}&page_size={pageSize}`
+		);
+		const {count, next, previous, results} = await response.json();
+		setLawsuit(results);
+		setLoading(false);
+	};
 
 	useEffect(() => {
-		setLoading(true);
-		fetch(`${BACKEND_API_URL}/lawsuit/`)
-			.then((response) => response.json())
-			.then((data) => {
-				setLawsuit(data);
-				setLoading(false);
-			});
-	}, []);
-
-	console.log(lawsuits)
+		fetchLawsuits();
+	}, [page]);
 
 	return (
 		<Container>
@@ -52,7 +69,7 @@ export const AllLawsuits = () => {
 			)}
 
 			{!loading && lawsuits.length > 0 && (
-				<TableContainer component={Paper}>
+				<><TableContainer component={Paper}>
 					<Table sx={{ minWidth: 650 }} aria-label="simple table">
 						<TableHead>
 							<TableRow>
@@ -100,6 +117,9 @@ export const AllLawsuits = () => {
 						</TableBody>
 					</Table>
 				</TableContainer>
+				<Button disabled={page === 1} onClick={() => setPage(page - 1)}>Previous</Button>
+				<Button disabled={lawsuits.length < pageSize} onClick={() => setPage(page + 1)}>Next</Button>
+				</>
 			)}
 		</Container>
 	);
