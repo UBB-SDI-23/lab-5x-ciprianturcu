@@ -79,6 +79,7 @@ export const AllAttorneys = () => {
 								<TableCell align="right">City</TableCell>
 								<TableCell align="center">Birthday</TableCell>
 								<TableCell align="center">Type</TableCell>
+								<TableCell align="center">Fee</TableCell>
 								<TableCell align="center">Nr. ongoing lawsuits</TableCell>
 							</TableRow>
 						</TableHead>
