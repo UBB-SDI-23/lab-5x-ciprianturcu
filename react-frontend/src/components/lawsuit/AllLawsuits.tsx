@@ -54,6 +54,8 @@ export const AllLawsuits = () => {
 		fetchLawsuits();
 	}, [page]);
 
+	console.log(lawsuits);
+
 	return (
 		<Container>
 			<h1>All Lawsuits</h1>
