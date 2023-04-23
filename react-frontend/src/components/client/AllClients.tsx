@@ -24,18 +24,38 @@ import AddIcon from "@mui/icons-material/Add";
 export const AllClients = () => {
 	const [loading, setLoading] = useState(false);
 	const [clients, setClients] = useState<Client[]>([]);
+	const [page, setPage] = useState(1);
+	const [pageSize, setPageSize] = useState(10);
+	const current = (page - 1) * pageSize + 1;
+
+	// useEffect(() => {
+	// 	setLoading(true);
+	// 	fetch(`${BACKEND_API_URL}/client/`)
+	// 		.then((response) => response.json())
+	// 		.then((data) => {
+	// 			setClients(data);
+	// 			setLoading(false);
+	// 		});
+	// }, []);
+
+	// console.log(clients)
+
+	const fetchClients = async() => {
+		setLoading(true);
+		const response = await fetch(
+			`${BACKEND_API_URL}/client/?page=${page}&page_size=${pageSize}`
+		);
+		const {count, next, previous, results} = await response.json();
+		setClients(results);
+		setLoading(false);
+	};
 
 	useEffect(() => {
-		setLoading(true);
-		fetch(`${BACKEND_API_URL}/client/`)
-			.then((response) => response.json())
-			.then((data) => {
-				setClients(data);
-				setLoading(false);
-			});
-	}, []);
+		fetchClients();
+	}, [page]);
 
-	console.log(clients)
+	console.log(clients);
+
 
 	const sortClient = () => {
         const sortedClients = [... clients].sort((a:Client, b:Client)=>{
@@ -78,7 +98,7 @@ export const AllClients = () => {
         	)}
 
 			{!loading && clients.length > 0 && (
-				<TableContainer component={Paper}>
+				<><TableContainer component={Paper}>
 					<Table sx={{ minWidth: 650 }} aria-label="simple table">
 						<TableHead>
 							<TableRow>
@@ -128,6 +148,10 @@ export const AllClients = () => {
 						</TableBody>
 					</Table>
 				</TableContainer>
+				<Button disabled={page === 1} onClick={() => setPage(page - 1)}>Previous</Button>
+				<Button disabled={clients.length < pageSize} onClick={() => setPage(page + 1)}>Next</Button>
+				</>
+				
 			)}
 		</Container>
 	);
