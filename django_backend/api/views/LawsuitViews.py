@@ -1,4 +1,4 @@
-from django.db.models import Sum, F
+from django.db.models import Sum, F, Count
 from rest_framework import generics
 
 from api.models.Lawsuit import Lawsuit
@@ -11,7 +11,7 @@ class LawsuitList(generics.ListCreateAPIView):
     pagination_class = CustomPagination
 
     def get_queryset(self):
-        queryset = Lawsuit.objects.all()
+        queryset = Lawsuit.objects.all().annotate(nb_attorneys=Count("lawsuits"))
         client = self.request.query_params.get('client')
         if client is not None:
             queryset = queryset.filter(client=client)

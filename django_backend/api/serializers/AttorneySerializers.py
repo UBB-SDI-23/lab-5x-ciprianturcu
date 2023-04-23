@@ -6,6 +6,8 @@ from api.models.Attorney import Attorney
 
 
 class AttorneySerializer(serializers.ModelSerializer):
+    nb_lawsuits = serializers.IntegerField(read_only=True)
+
     def validate(self, data):
         pattern = r'^[a-zA-Z\s]+$'
         if not bool(re.match(pattern, data['name'])):

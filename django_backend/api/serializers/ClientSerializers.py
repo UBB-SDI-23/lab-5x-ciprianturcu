@@ -8,7 +8,7 @@ from api.serializers.LawsuitSerializers import LawsuitSerializer
 
 class ClientSerializer(serializers.ModelSerializer):
     lawsuits = LawsuitSerializer(many=True, read_only=True)
-
+    nb_lawsuits = serializers.IntegerField(read_only=True)
     def validate(self, data):
         pattern_city = r'^[a-zA-Z\s-]+$'
         pattern_name = r'^[a-zA-Z\s]+$'
@@ -24,7 +24,7 @@ class ClientSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Client
-        fields = ('id','name', 'phone_number', 'city', 'date_of_birth', 'type', 'lawsuits')
+        fields = ('id','name', 'phone_number', 'city', 'date_of_birth', 'type', 'nb_lawsuits','lawsuits')
 
 class ClientForAutocompleteSerializer(serializers.ModelSerializer):
     class Meta:

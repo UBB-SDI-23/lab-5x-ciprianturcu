@@ -1,3 +1,4 @@
+from django.db.models import Count
 from rest_framework import status, generics
 from rest_framework.views import APIView
 
@@ -25,7 +26,7 @@ class LawsuitsOfClientList(APIView):
 class ClientList(generics.ListCreateAPIView):
     serializer_class = ClientSerializer
     pagination_class = CustomPagination
-    queryset = Client.objects.all()
+    queryset = Client.objects.all().annotate(nb_lawsuits=Count("lawsuits"))
 
     # def list(self, request, *args, **kwargs):
     #     queryset = self.get_queryset()
