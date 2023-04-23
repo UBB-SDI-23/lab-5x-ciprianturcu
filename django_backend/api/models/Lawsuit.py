@@ -19,4 +19,6 @@ class Lawsuit(models.Model):
 
     class Meta:
         ordering = ['id']
-        indexes = [models.Index(fields=["client"])]
+        indexes = [models.Index(fields=["client", "id"]),
+                   models.Index(fields=["state", "id"]),
+                   models.Index(fields=["description"])]

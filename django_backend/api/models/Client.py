@@ -14,3 +14,4 @@ class Client(models.Model):
 
     class Meta:
         ordering = ['id']
+        indexes=[models.Index(fields=["name"])]

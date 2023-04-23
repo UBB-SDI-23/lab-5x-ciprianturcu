@@ -15,4 +15,10 @@ class AttorneyOnLawsuit(models.Model):
 
     class Meta:
         ordering = ['id']
-        indexes = [models.Index(fields=["attorney", "lawsuit"])]
+        indexes = [models.Index(fields=["attorney", "lawsuit"]),
+                   models.Index(fields=["attorney"]),
+                   models.Index(fields=["lawsuit"]),
+                   models.Index(fields=["att_role"]),
+                   models.Index(fields=["work_type"]),
+                   models.Index(fields=["description"]),
+                   ]
